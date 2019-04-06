@@ -33,12 +33,13 @@ public class CaptureActivity extends AppCompatActivity {
     private static final int REQUEST_TAKE_PHOTO=2222;
     private static final int REQUEST_TAKE_ALBUM=3333;
     private static final int REQUEST_IMAGE_CROP=4444;
-
+    private static final int REQUEST_IMAGEVIEW=5555;
     Button btn_capture, btn_album;
     ImageView iv_view;
     String mCurrentPhotoPath;
     Uri imageUri;
     Uri photoURI, albumURI;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -96,7 +97,7 @@ public class CaptureActivity extends AppCompatActivity {
         File imageFile =null;
         File storageDir =new File(Environment.getExternalStorageDirectory()+"/Pictures", "gyeom");
 
-        if(!storageDir.exists()){
+            if(!storageDir.exists()){
             Log.i("mCurrentPhotoPath1", storageDir.toString());
             storageDir.mkdirs();
         }
@@ -147,8 +148,9 @@ public class CaptureActivity extends AppCompatActivity {
                     try{
                         Log.i("REQUEST_TAKE_PHOTO", "ok");
                         galleryAddPic();
-
-                        iv_view.setImageURI(imageUri);
+                        Intent intent = new Intent(getApplicationContext(), ImgViewActivity.class);
+                        intent.putExtra("imageUri", imageUri);
+                        startActivityForResult(intent, REQUEST_IMAGEVIEW);
                     }catch (Exception e){
                         Log.e("REQUST_TAKE_PHOTO", e.toString());
                     }
@@ -165,6 +167,7 @@ public class CaptureActivity extends AppCompatActivity {
                             albumFile = createImageFile();
                             photoURI=data.getData();
                             albumURI=Uri.fromFile(albumFile);
+
                             cropImage();
                         }catch (Exception e){
                             Log.e("TAKE_ALBUM_SINGLE ERROR", e.toString());
@@ -175,7 +178,9 @@ public class CaptureActivity extends AppCompatActivity {
             case REQUEST_IMAGE_CROP:
                 if(resultCode==Activity.RESULT_OK){
                     galleryAddPic();
-                    iv_view.setImageURI(albumURI);
+                    Intent intent2  =new Intent(this, ImgViewActivity.class);
+                    intent2.putExtra("imageUri", albumURI);
+                    startActivityForResult(intent2, REQUEST_IMAGEVIEW);
                 }
                 break;
         }
