@@ -47,7 +47,6 @@ public class CaptureActivity extends AppCompatActivity {
 
         btn_capture = (Button) findViewById(R.id.btn_capture);
         btn_album = (Button) findViewById(R.id.btn_album);
-        iv_view = (ImageView) findViewById(R.id.iv_view);
 
         btn_capture.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -4,10 +4,75 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
     tools:context=".ImgViewActivity">
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="match_parent"
-        android:layout_height="500dp" />
+        android:layout_height="284dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="5dp"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="277dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="20dp">
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="택스트 화면 입니다.택스트 화면 입니다.택스트 화면 입니다.택스트 화면 입니다.택스트 화면 입니다.택스트 화면 입니다.택스트 화면 입니다.택스트 화면 입니다.택스트 화면 입니다.택스트 화면 입니다.택스트 화면 입니다.택스트 화면 입니다.택스트 화면 입니다.
+                택스트 화면 입니다.택스트 화면 입니다.택스트 화면 입니다.택스트 화면 입니다.택스트 화면 입니다.택스트 화면 입니다.택스트 화면 입니다.택스트 화면 입니다.택스트 화면 입니다.택스트 화면 입니다."
+            android:textSize="40dp" />
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="10">
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="5"
+            android:gravity="center"
+            android:layout_marginRight="20dp">
+
+            <Button
+                android:id="@+id/start"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="startBtnClicked"
+                android:text="START"
+                android:textColor="#ffffff"
+                android:visibility="visible"
+                android:background="@drawable/blue_item"/>
+
+            <Button
+                android:id="@+id/stop"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="startBtnClicked"
+                android:text="STOP"
+                android:textColor="#ffffff"
+                android:visibility="invisible"
+                android:background="@drawable/blue_item"/>
+        </FrameLayout>
+
+        <Button
+            android:id="@+id/reset"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="5"
+            android:textColor="#ffffff"
+            android:text="RESET"
+            android:background="@drawable/blue_item"/>
+    </LinearLayout>
+
 </LinearLayout>

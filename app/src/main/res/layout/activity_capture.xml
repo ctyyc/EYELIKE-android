@@ -2,20 +2,49 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp">
 
-    <Button
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/btn_capture"
-        android:text="사진찍기"/>
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/btn_album"
-        android:text="앨범열기"/>
+        android:text="MENU"
+        android:gravity="center"
+        android:textSize="30dp"
+        android:layout_marginBottom="16dp"/>
     <ImageView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/iv_view"/>
+        android:layout_height="wrap_content"
+        android:src="@drawable/glass_img"
+        android:layout_marginBottom="30dp"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:id="@+id/btn_capture"
+        android:text="CAPTURE"
+        android:layout_marginBottom="20dp"
+        android:textSize="20dp"
+        android:textColor="#ffffff"
+        android:background="@drawable/blue_item"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:id="@+id/btn_album"
+        android:text="ALBUM"
+        android:layout_marginBottom="20dp"
+        android:textSize="20dp"
+        android:textColor="#ffffff"
+        android:background="@drawable/blue_item"/>
+
+    <Button
+        android:id="@+id/setting"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="SETTING"
+        android:textSize="20dp"
+        android:textColor="#ffffff"
+        android:background="@drawable/blue_item"/>
+
+
 </LinearLayout>
